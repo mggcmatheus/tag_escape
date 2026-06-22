@@ -1,0 +1,73 @@
+name: tap_escape
+description: "Tap Escape - jogo hypercasual de sobrevivência com dash."
+publish_to: 'none'
+
+# Versão exibida na Play Store (version) + build number (após o +)
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Engine de jogo 2D
+  flame: ^1.18.0
+
+  # Gerenciamento de estado
+  provider: ^6.1.2
+
+  # Persistência local (high score, moedas, missões, skins, settings)
+  shared_preferences: ^2.2.3
+
+  # Monetização
+  google_mobile_ads: ^5.1.0
+
+  # Áudio (efeitos sonoros)
+  audioplayers: ^6.0.0
+
+  # Ícones do app (Material já vem com Flutter)
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+  # Geração de ícone e splash para publicação
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/audio/
+    - assets/images/
+
+# -----------------------------------------------------------------------------
+# Configuração do ícone do app.
+# Coloque um PNG 1024x1024 em assets/icon/icon.png e rode:
+#   dart run flutter_launcher_icons
+# -----------------------------------------------------------------------------
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/icon/icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#0A0A12"
+  adaptive_icon_foreground: "assets/icon/icon_foreground.png"
+
+# -----------------------------------------------------------------------------
+# Splash screen nativa. Após ajustar, rode:
+#   dart run flutter_native_splash:create
+# -----------------------------------------------------------------------------
+flutter_native_splash:
+  color: "#0A0A12"
+  image: assets/icon/splash_logo.png
+  android_12:
+    color: "#0A0A12"
+    image: assets/icon/splash_logo.png
+  android: true
+  ios: false
